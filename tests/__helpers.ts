@@ -112,7 +112,7 @@ export function createApolloServerContext({ typeDefs, resolvers }: ApolloServerC
   })
 
   afterEach(async () => {
-    await new Promise((res, rej) => {
+    await new Promise<void>((res, rej) => {
       ctx.server.close((e) => (e ? rej(e) : res()))
     })
   })
